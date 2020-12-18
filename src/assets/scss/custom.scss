@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+$primary: #883CAE;
+$secondary: #6C757D;
+$success: #28A745;
+$warning: #FFC107;
+$info: #138496;
+$danger: #C82333;
+
+.text-primary {
+    color: $primary;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+$heightsViewport: 5vh, 10vh, 15vh, 20vh, 25vh, 30vh, 45vh, 50vh, 55vh, 60vh, 65vh, 70vh, 75vh, 80vh, 85vh, 90vh, 95vh, 100vh;
+@each $heightViewport in $heightsViewport {
+    .h-#{$heightViewport} {
+        height: $heightViewport;
+    }
+}
+
+
+.p-divider.p-divider-horizontal:before {
+    border-top: 1px solid $primary;
+}
+
+.p-slider-horizontal, .p-inputtext {
+    width: 100%;
+}
+.p-slider-vertical {
+	height: 5rem;
+}
+
+.volumn {
+    width: 5rem !important;
+}
