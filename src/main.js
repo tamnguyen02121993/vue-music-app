@@ -13,6 +13,7 @@ import Listbox from "primevue/listbox";
 import Divider from "primevue/divider";
 import Button from "primevue/button";
 import Slider from "primevue/slider";
+import Dialog from 'primevue/dialog';
 
 // Css
 import "primevue/resources/themes/bootstrap4-light-purple/theme.css";
@@ -34,4 +35,5 @@ createApp(App)
   .component("divider", Divider)
   .component("p-button", Button)
   .component("slider", Slider)
+  .component("dialog", Dialog)
   .mount("#app");
