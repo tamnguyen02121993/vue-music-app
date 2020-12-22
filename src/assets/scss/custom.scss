@@ -23,9 +23,16 @@ $heightsViewport: 5vh, 10vh, 15vh, 20vh, 25vh, 30vh, 45vh, 50vh, 55vh, 60vh, 65v
 @each $heightViewport in $heightsViewport {
     .h-#{$heightViewport} {
         height: $heightViewport;
+        max-height: $heightViewport;
     }
 }
 
+$widthsViewport: 5vw, 10vw, 15vw, 20vw, 25vw, 30vw, 45vw, 50vw, 55vw, 60vw, 65vw, 70vw, 75vw, 80vw, 85vw, 90vw, 95vw, 100vw;
+@each $widthViewport in $widthsViewport {
+    .w-#{$widthViewport} {
+        width: $widthViewport;
+    }
+}
 
 .p-divider.p-divider-horizontal:before {
     border-top: 1px solid $primary;

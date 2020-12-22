@@ -7,14 +7,14 @@ import PrimeVue from "primevue/config";
 import Toast from "primevue/toast";
 import ToastService from "primevue/toastservice";
 import FileUpload from "primevue/fileupload";
-import Sidebar from "primevue/sidebar";
 import Card from "primevue/card";
 import Listbox from "primevue/listbox";
-import Divider from "primevue/divider";
 import Button from "primevue/button";
 import Slider from "primevue/slider";
 import Dialog from 'primevue/dialog';
-
+import Avatar from 'primevue/avatar';
+import Tooltip from 'primevue/tooltip';
+import ScrollTop from 'primevue/scrolltop';
 // Css
 import "primevue/resources/themes/bootstrap4-light-purple/theme.css";
 import "primevue/resources/primevue.min.css";
@@ -29,11 +29,12 @@ createApp(App)
   .use(ToastService)
   .component("toast", Toast)
   .component("file-upload", FileUpload)
-  .component("side-bar", Sidebar)
   .component("card", Card)
   .component("list-box", Listbox)
-  .component("divider", Divider)
   .component("p-button", Button)
   .component("slider", Slider)
-  .component("dialog", Dialog)
+  .component("p-dialog", Dialog)
+  .component("avatar", Avatar)
+  .component("scroll-top", ScrollTop)
+  .directive('tooltip', Tooltip)
   .mount("#app");
