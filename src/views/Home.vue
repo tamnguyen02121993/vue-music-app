@@ -12,7 +12,18 @@
           <div class="p-grid">
             <div class="p-col-4">
               <div class="p-d-flex p-jc-center p-ai-center">
-                <img v-if="currentAudio.cover" :src="currentAudio.cover" :class="{ image: isPlaying }"/>
+                <img
+                  v-if="currentAudio.cover && isPlaying"
+                  :src="currentAudio.cover"
+                  :class="{ image: isPlaying }"
+                />
+                <avatar
+                  v-else-if="currentAudio.cover"
+                  :image="currentAudio.cover"
+                  class="p-mr-2"
+                  size="xlarge"
+                  style="width: 150px; height: 150px; border-radius: 100%"
+                />
               </div>
             </div>
             <div class="p-col-8">
@@ -201,7 +212,7 @@
       />
     </template>
   </p-dialog>
-  <scroll-top :threshold="200" />
+  <!-- <scroll-top :threshold="200" /> -->
 </template>
 
 <script>
@@ -227,10 +238,10 @@ export default {
   },
   computed: {
     displayTimeStart() {
-      return this.convertNumberToTime(this.timeStart);
+      return this.convertNumberToTime(this.timeStart + this.currentTime);
     },
     displayTimeEnd() {
-      return this.convertNumberToTime(this.timeEnd);
+      return this.convertNumberToTime(this.timeEnd - this.currentTime);
     },
     canNext() {
       if (this.audioList.length === 0) {
@@ -282,7 +293,7 @@ export default {
           }
           self.audioList.push({
             src: window.URL.createObjectURL(self.files[i]),
-            title: tag.tags.title,
+            title: tag.tags.title || self.files[i].name,
             artist: tag.tags.artist,
             year: tag.tags.year,
             album: tag.tags.album,
@@ -315,7 +326,8 @@ export default {
     },
     onEnded() {
       if (!this.canNext) {
-        this.currentAudio = this.audioList[0];
+        this.currentAudio = {...this.audioList[0]};
+        this.audioElement.play();
       } else {
         const nextAudio = this.audioList[this.currentIndex + 1];
         this.currentAudio = { ...nextAudio };

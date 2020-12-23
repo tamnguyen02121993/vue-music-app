@@ -20,5 +20,15 @@ yarn build
 yarn lint
 ```
 
+### Deploy to Surge.sh
+```
+yarn  deploy
+```
+
+###Build app with @electron-forge
+```
+yarn make
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

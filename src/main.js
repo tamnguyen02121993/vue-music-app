@@ -14,7 +14,7 @@ import Slider from "primevue/slider";
 import Dialog from 'primevue/dialog';
 import Avatar from 'primevue/avatar';
 import Tooltip from 'primevue/tooltip';
-import ScrollTop from 'primevue/scrolltop';
+// import ScrollTop from 'primevue/scrolltop';
 // Css
 import "primevue/resources/themes/bootstrap4-light-purple/theme.css";
 import "primevue/resources/primevue.min.css";
@@ -35,6 +35,6 @@ createApp(App)
   .component("slider", Slider)
   .component("p-dialog", Dialog)
   .component("avatar", Avatar)
-  .component("scroll-top", ScrollTop)
+  // .component("scroll-top", ScrollTop)
   .directive('tooltip', Tooltip)
   .mount("#app");
